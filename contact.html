@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOX8 - Our Outlets</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 100px 20px 80px; /* Added top padding for navbar and bottom padding for footer */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures footer is at the bottom */
+        }
+
+        h2 {
+            color: white;
+            background-color: #ff0000;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        h2:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+        iframe {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            width: 100%;
+            height: 400px;
+        }
+
+        iframe:hover {
+            border-color: #ff0000;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+
+        /* Navigation bar styles */
+        .navigation {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #333; /* Dark gray for contrast */
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navigation button {
+            background-color: #ff0000; /* Red background */
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation button:hover {
+            background-color: darkred; /* Darker red on hover */
+        }
+
+        /* Footer styling */
+        #footer {
+            background-color: #ff0000;
+            color: white;
+            text-align: center;
+            padding: 20px 0; /* Increased padding for more space */
+            position: relative; /* Changed from fixed to relative */
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            font-size: 14px;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 40px; /* Increased space between page content and footer */
+            flex-shrink: 0; /* Prevent footer from collapsing */
+        }
+
+        #footer a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar with dark gray background -->
+    <div class="navigation">
+        <a href="Home.html"><button type="button">Home</button></a>
+        <a href="lab.html"><button type="button">About Us</button></a>
+        <a href="feedback1.html"><button type="button">Feedback</button></a>
+        <a href="contact.html"><button type="button">Contact</button></a>
+    </div>
+
+    <!-- Outlets section -->
+    <h2>Our Outlets</h2>
+    <table>
+        <tr>
+            <th>Area</th>
+            <th>Phone Number</th>
+        </tr>
+        <tr>
+            <td>Rajajinagar</td>
+            <td>080 236-70-431</td>
+        </tr>
+        <tr>
+            <td>Mathikere</td>
+            <td>080 236-70-431</td>
+        </tr>
+        <tr>
+            <td>Koramangala</td>
+            <td>080 236-70-431</td>
+        </tr>
+        <tr>
+            <td>Malleshwaram</td>
+            <td>080 236-70-431</td>
+        </tr>
+        <tr>
+            <td>Yeshwanthpur</td>
+            <td>080 236-70-431</td>
+        </tr>
+        <tr>
+            <td>K R Puram</td>
+            <td>080 236-70-431</td>
+        </tr>
+        <tr>
+            <td>M G Road</td>
+            <td>080 236-70-431</td>
+        </tr>
+    </table>
+
+    <!-- Full-width Embedded map -->
+    <iframe src="Map.png"></iframe>
+    <hr>
+
+    <!-- Footer -->
+    <div id="footer">
+        <p>© Copyright 2013 - 2024 EatClub Brands Pvt. Ltd. All rights reserved</p>
+        <p>Visit: <a href="https://box8.in" target="_blank">BOX8 Official Website</a></p>
+    </div>
+
+</body>
+</html>

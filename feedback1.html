@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOX8 Feedback Form</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Navigation bar styles */
+        .navigation {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #333; /* Dark gray for contrast */
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navigation button {
+            background-color: #ff0000; /* Red background */
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation button:hover {
+            background-color: darkred; /* Darker red on hover */
+        }
+
+        /* Main content styles */
+        #feedback-form {
+            text-align: center;
+            background-color: #ff0000;
+            color: white;
+            padding: 15px 0;
+            width: 400px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            margin: 100px 0 20px;
+            transition: background-color 0.3s;
+        }
+
+        #feedback-form:hover {
+            background-color: #cc0000;
+        }
+
+        .form {
+            background-color: #fff;
+            padding: 30px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-top: 4px solid #ff0000;
+            transition: box-shadow 0.3s;
+            margin-bottom: 100px; /* Added margin to increase space before footer */
+        }
+
+        .form:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            border-color: #ff0000;
+            box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+        }
+
+        input[type="submit"] {
+            background-color: #ff0000;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+
+        /* Footer styles */
+        #footer {
+            background-color: #ff0000;
+            color: white;
+            text-align: center;
+            width: 100%;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            font-size: 14px;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s;
+            margin-top: 60px; /* Adjusted for more space above the footer */
+        }
+
+        #footer:hover {
+            background-color: #cc0000;
+        }
+
+        #footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="navigation">
+        <a href="index.html"><button type="button">Home</button></a>
+        <a href="lab.html"><button type="button">About Us</button></a>
+        <a href="feedback1.html"><button type="button">Feedback</button></a>
+        <a href="contact.html"><button type="button">Contact</button></a>
+    </div>
+
+    <!-- Feedback form title -->
+    <h1 id="feedback-form">BOX8 Feedback Form</h1>
+    
+    <!-- Feedback form -->
+    <div class="form">
+        <form method="POST" action="feedback.php">
+            <label for="customer_id">Customer ID:</label>
+            <input type="text" name="customer_id" id="customer_id" required>
+            
+            <label for="customer_name">Full Name:</label>
+            <input type="text" name="customer_name" id="customer_name" required>
+            
+            <label for="product_name">Product Name:</label>
+            <input type="text" name="product_name" id="product_name" required>
+            
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" name="rating" id="rating" min="1" max="5" required>
+            
+            <label for="comments">Comments:</label>
+            <textarea name="comments" id="comments" rows="4" required></textarea>
+            
+            <input type="submit" name="submit" value="Submit Feedback">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <p>© Copyright 2013 - 2024 EatClub Brands Pvt. Ltd. All rights reserved</p>
+        <p>Visit: <a href="https://box8.in" target="_blank">BOX8 Official Website</a></p>
+    </div>
+</body>
+</html>

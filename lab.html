@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOX8 - About Us and Feedback</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 100px 20px 80px; /* Added top padding for navbar and bottom padding for footer */
+            color: #333;
+        }
+
+        h1, h2, h5 {
+            color: white;
+            background-color: #ff0000; /* Changed to match the new style */
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        h1:hover, h2:hover, h5:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #d10000;
+        }
+
+        button {
+            background-color: #d10000;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #b30000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation bar styles */
+        .navigation {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #333; /* Dark gray for contrast */
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navigation a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: #ff0000; /* Bright red for hover */
+            color: #fff;
+        }
+
+        /* Footer styling */
+        #footer {
+            background-color: #ff0000;
+            color: white;
+            text-align: center;
+            padding: 20px 0; /* Increased padding for more space */
+            position: relative; /* Changed from fixed to relative */
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            font-size: 14px;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 40px; /* Increased space between page content and footer */
+        }
+
+        #footer a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // JavaScript for interactions
+        function changeMessage() {
+            document.getElementById('demo').innerHTML = 'Get offers up to 35% <br> Only on BOX8.in* ';
+        }
+
+        function displaySum() {
+            var x = 49372979274;
+            var y = 10000000000;
+            var z = x + y;
+            document.getElementById('add').innerHTML = "Total Number Of Customers: " + z;
+        }
+
+        function onMouseOverEvent() {
+            document.getElementById('hoverText').innerHTML = 'Welcome to BOX8!';
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation bar with dark gray background -->
+    <div class="navigation">
+        <a href="home.html"><button type="button">Home</button></a>
+        <a href="lab.html"><button type="button">About Us</button></a>
+        <a href="feedback1.html"><button type="button">Feedback</button></a>
+        <a href="contact.html"><button type="button">Contact</button></a>
+    </div>
+
+    <!-- Logo below the navigation -->
+    <p><a href="https://box8.in/about"><img src="logo.jpeg" alt="BOX8 logo" width="150px"></a></p>
+
+    <hr>
+    <!-- About Us section -->
+    <h1>About Us</h1>
+    <hr>
+
+    <p id="hoverText" onmouseover="onMouseOverEvent()">Hover over me to see a message!</p>
+
+    <p>
+        Founded in 2012 by two IIT graduates - Anshul Gupta & Amit Raj - BOX8 started as a small outlet in a corporate
+        cafeteria. The idea was to serve Irresistible Desi Meals in a convenient, easy-to-carry box. Today, we serve over
+        22,000+ meals every day across our 300+ outlets in Mumbai, Delhi NCR, Bangalore, Hyderabad, Pune, Chennai & Kolkata!
+    </p>
+    <p>You'll be spoilt for choices with our unique Desi Box, All-In-1 Meals, Paratha Wraps, Biryanis, Desserts, & more.</p>
+    <p>Superfast Delivery is our forte! We deliver meals in under 38 mins with no delivery charges!</p>
+
+    <!-- Interactive message and buttons -->
+    <p id="demo">Press to see surprise 👇</p>
+    <button type="button" onclick="changeMessage()">Press Me</button>
+
+    <p id="add">BOX8 Family</p>
+    <button type="button" id="exploreButton" onclick="displaySum()">Explore</button><br>
+
+    <!-- Footer -->
+    <div id="footer">
+        <p>© Copyright 2013 - 2024 EatClub Brands Pvt. Ltd. All rights reserved</p>
+        <p>Visit: <a href="https://box8.in" target="_blank">BOX8 Official Website</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOX8 - Your Favorite Meals Delivered</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 100px 20px 80px; /* Added top padding for navbar and bottom padding for footer */
+            color: #333;
+        }
+
+        h1, h2, h5 {
+            color: white;
+            background-color: #ff0000; /* Changed to match the new style */
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        h1:hover, h2:hover, h5:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #d10000;
+        }
+
+        button {
+            background-color: #d10000;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #b30000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation bar styles */
+        .navigation {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #333; /* Dark gray for contrast */
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navigation a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 60 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: #ff0000; /* Bright red for hover */
+            color: #fff;
+        }
+
+        /* Hero section */
+        .hero {
+            background-image: url('main.png'); /* Replace with actual image path */
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px; /* Added margin to prevent overlap with fixed navbar */
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #ff0000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #ff9999;
+        }
+
+        /* Featured meals section */
+        .featured-meals {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .featured-meals h2 {
+            margin-bottom: 20px;
+            color: #d10000;
+        }
+
+        .meal-card {
+            display: inline-block;
+            width: 220px;
+            margin: 15px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            transition: transform 0.3s;
+        }
+
+        .meal-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .meal-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .meal-card h3 {
+            margin: 10px 0;
+            color: #d10000;
+        }
+
+        /* Testimonials section */
+        .testimonials {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .testimonial {
+            margin: 20px;
+            padding: 20px;
+            border-left: 4px solid #d10000;
+            font-style: italic;
+            color: #555;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: "“";
+            font-size: 48px;
+            position: absolute;
+            left: -20px;
+            top: -10px;
+            color: #d10000;
+        }
+
+        .testimonial:after {
+            content: "”";
+            font-size: 48px;
+            position: absolute;
+            right: -20px;
+            bottom: -10px;
+            color: #d10000;
+        }
+
+        /* Footer styles */
+        #footer {
+            background-color: #ff0000;
+            color: white;
+            text-align: center;
+            padding: 20px 0; /* Increased padding for more space */
+            position: relative; /* Changed from fixed to relative */
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            font-size: 14px;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 40px; /* Increased space between page content and footer */
+        }
+
+        #footer a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar with dark gray background -->
+    <div class="navigation">
+        <a href="#"><button type="button">Home</button></a>
+        <a href="lab.html"><button type="button">About Us</button></a>
+        <a href="feedback1.html"><button type="button">Feedback</button></a>
+        <a href="contact.html"><button type="button">Contact</button></a>
+    </div>
+    <p><a href="https://box8.in/about"><img src="logo.jpeg" alt="BOX8 logo" width="150px"></a></p>
+
+    <!-- Hero section -->
+    <div class="hero">
+        <div>
+            <h1>Welcome to BOX8!</h1>
+            <p>Your favorite meals delivered fast.</p>
+            <button>Order Now</button>
+        </div>
+    </div>
+
+    <!-- Featured Meals Section -->
+     
+    <div class="featured-meals">
+        <h2 style="color:rgb(255, 255, 255);">Featured Meals</h2>
+        <div class="meal-card">
+            
+            <img src="biriyani.png" alt="Meal 1"> <!-- Replace with actual image path -->
+            <h3>Delicious Biriyani</h3>
+            <p>Only ₹199</p>
+        </div>
+        <div class="meal-card">
+            <img src="wrap.png" alt="Meal 2"> <!-- Replace with actual image path -->
+            <h3>Veg Paratha Wrap</h3>
+            <p>Only ₹149</p>
+        </div>
+        <div class="meal-card">
+            <img src="tikka.png" alt="Meal 3"> <!-- Replace with actual image path -->
+            <h3>Classic Paneer Tikka</h3>
+            <p>Only ₹249</p>
+        </div>
+        <div class="meal-card">
+            <img src="ck.png" alt="Meal 4"> <!-- Replace with actual image path -->
+            <h3>Spicy Chicken Curry</h3>
+            <p>Only ₹299</p>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            "The best place for a quick meal! Always fresh and delicious."
+        </div>
+        <div class="testimonial">
+            "Love the variety of options. Never disappoints!"
+        </div>
+        <div class="testimonial">
+            "Fast delivery and amazing flavors. Highly recommend!"
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <p>© Copyright 2013 - 2024 EatClub Brands Pvt. Ltd. All rights reserved</p>
+        <p>Visit: <a href="https://box8.in" target="_blank">BOX8 Official Website</a></p>
+    </div>
+</body>
+</html>
